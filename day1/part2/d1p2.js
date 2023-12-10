@@ -7,8 +7,8 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
     }
 
     const inputText = data;
-    let inputArray = inputText.split("\r\n");
-    inputArray = inputArray.map(inputLine => {
+    let inputLines = inputText.split("\r\n");
+    inputLines = inputLines.map(inputLine => {
         let charactersArray = [...inputLine];
         //console.log("Current Characters Array: " + charactersArray);
 
@@ -69,8 +69,8 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
 
 
     let finalCounter = 0;
-    for (let i = 0; i < inputArray.length; i++) {
-        finalCounter = finalCounter + parseInt(inputArray[i]);
+    for (let i = 0; i < inputLines.length; i++) {
+        finalCounter = finalCounter + parseInt(inputLines[i]);
     }
     console.log("Final Sum: " + finalCounter);
 });

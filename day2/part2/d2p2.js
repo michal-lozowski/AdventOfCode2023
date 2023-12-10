@@ -7,10 +7,10 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
     }
 
     const inputText = data;
-    let inputArray = inputText.split("\r\n");
+    let inputLines = inputText.split("\r\n");
     
     let finalSum = 0;
-    for (let i = 0; i < inputArray.length; i++) {
+    for (let i = 0; i < inputLines.length; i++) {
         
         const patternRed = /(([0-9])|(1[0-9])|(2[0-9])) red/g;
         const patternGreen = /(([0-9])|(1[0-9])|(2[0-9])) green/g;
@@ -20,17 +20,17 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
         let maxGreenFound = 1;
         let maxBlueFound = 1;
 
-        while ((match = patternRed.exec(inputArray[i])) !== null) {
+        while ((match = patternRed.exec(inputLines[i])) !== null) {
             matchedNumber = match[1];
             if (parseInt(matchedNumber) > maxRedFound) maxRedFound = matchedNumber
         }
         
-        while ((match = patternGreen.exec(inputArray[i])) !== null) {
+        while ((match = patternGreen.exec(inputLines[i])) !== null) {
             matchedNumber = match[1];
             if (parseInt(matchedNumber) > maxGreenFound) maxGreenFound = matchedNumber
         }
         
-        while ((match = patternBlue.exec(inputArray[i])) !== null) {
+        while ((match = patternBlue.exec(inputLines[i])) !== null) {
             matchedNumber = match [1];
             if (parseInt(matchedNumber) > maxBlueFound) maxBlueFound = matchedNumber
         }
