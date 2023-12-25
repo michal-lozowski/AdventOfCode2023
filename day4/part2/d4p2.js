@@ -43,9 +43,10 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
         for (let i = cardNumber + 1; i <= cardNumber + matches; i++) {
             cardCopies[i] = cardCopies[i] + (1 * cardCopies[cardNumber])
         }
+        console.log(cardCopies)
     })
-    cardCopies.forEach (element => {
-        finalCounter = finalCounter + element    
+    cardCopies.forEach(element => {
+        finalCounter = finalCounter + element
     })
     console.log(finalCounter)
 })
