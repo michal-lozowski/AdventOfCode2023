@@ -21,7 +21,7 @@ fs.readFile("realinput.txt", 'utf8', (err, data) => {
     function predictor(values) {
         if (differences(values).filter(element => element === 0).length === differences(values).length)
             return values[0]
-        else return (values[values.length - 1] + predictor(differences(values)))
+        else return (values[0] - predictor(differences(values)))
     }
 
     let finalSum = 0
